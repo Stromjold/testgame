@@ -12,7 +12,7 @@ Docente a cargo: Francisco Villarroel\
 Fecha de modificaciones: 25-06-2026\
 Fecha de entrega: 11/07/2026
 
-# Índice
+## Índice
 
 [1. Preproducción del Proyecto [1](#_Toc233299587)](#_Toc233299587)
 
@@ -74,7 +74,7 @@ Fecha de entrega: 11/07/2026
 
 1\. Preproducción del Proyecto
 
-1.1 Idea Inicial
+## 1.1 Idea Inicial
 
 El proyecto "Tierra de Nadie" surge con el objetivo de desarrollar un
 videojuego que se orientara en estrategia y supervivencia ambientado en
@@ -89,7 +89,7 @@ encargadas de enfrentar criaturas mutadas y sobrevivir en entornos
 contaminados, mientras descubre los acontecimientos que llevaron al
 colapso de la zona afectada.
 
-1.2 Investigación y Referencias
+## 1.2 Investigación y Referencias
 
 Antes del comienzo de la creación del proyecto, se investigó de que se
 trataría y como se haría, se estudió una gran variedad de historias y
@@ -106,7 +106,7 @@ sus fuerzas y poder conquistar su espacio
 Se investigo el tipo de juego que era, con los colaboradores del juego
 se llegó a la conclusión de que el juego a crear sería un tower defence.
 
-1.3 Definición de Objetivos
+## 1.3 Definición de Objetivos
 
 Durante la etapa de planificación se establecieron los siguientes
 objetivos:
@@ -154,7 +154,7 @@ dar a entender y dar la sensación de que la historia que se está
 intentando contar a través del juego sea más vivida para poder atraer la
 atención del consumidor en cuestión
 
-1.4 Diseño de la Historia
+## 1.4 Diseño de la Historia
 
 Se definió una narrativa compuesta por cinco capítulos que relatan los
 acontecimientos ocurridos desde el desastre nuclear hasta una segunda
@@ -165,7 +165,7 @@ jugador conocer nuevos escenarios, personajes y desafíos. Para facilitar
 la comprensión de la trama, se decidió incorporar Comic Strips al inicio
 de cada nivel.
 
-1.5 Diseño de Personajes
+## 1.5 Diseño de Personajes
 
 Se planificaron distintos tipos de personajes para el juego:
 
