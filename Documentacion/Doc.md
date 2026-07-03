@@ -12,7 +12,7 @@ Docente a cargo: Francisco Villarroel\
 Fecha de modificaciones: 25-06-2026\
 Fecha de entrega: 11/07/2026
 
-## Índice
+# Índice
 
 [1. Preproducción del Proyecto [1](#_Toc233299587)](#_Toc233299587)
 
