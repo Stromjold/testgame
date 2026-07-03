@@ -14,63 +14,38 @@ Fecha de entrega: 11/07/2026
 
 # Índice
 
-[1. Preproducción del Proyecto [1](#_Toc233299587)](#_Toc233299587)
+- [Preproducción del Proyecto](#preproducción-del-proyecto)
+  - [Idea Inicial](#idea-inicial)
+  - [Investigación y Referencias](#investigación-y-referencias)
+  - [Definición de Objetivos](#definición-de-objetivos)
+  - [Diseño de la Historia](#diseño-de-la-historia)
+  - [Diseño de Personajes](#diseño-de-personajes)
+  - [Diseño de Escenarios](#diseño-de-escenarios)
+  - [Planificación de Niveles](#planificación-de-niveles)
+  - [Selección de Herramientas](#selección-de-herramientas)
+  - [Planificación del Desarrollo](#planificación-del-desarrollo)
 
-[1.1 Idea Inicial [1](#_Toc233299588)](#_Toc233299588)
+- [Etapa de Planificación y Diseño](#etapa-de-planificación-y-diseño)
+  - [Desarrollo de la Base del Proyecto](#desarrollo-de-la-base-del-proyecto)
+  - [Implementación de Mecánicas Básicas](#implementación-de-mecánicas-básicas)
 
-[1.2 Investigación y Referencias [2](#_Toc233299589)](#_Toc233299589)
+- [Creación del Proyecto](#creación-del-proyecto)
 
-[1.3 Definición de Objetivos [2](#_Toc233299590)](#_Toc233299590)
+- [Capítulo 1 – Nivel 1](#capítulo-1--nivel-1)
+  - [Stack Tecnológico](#stack-tecnológico)
 
-[1.4 Diseño de la Historia [3](#_Toc233299591)](#_Toc233299591)
+- [Estructura de Archivos del Proyecto](#estructura-de-archivos-del-proyecto)
 
-[1.5 Diseño de Personajes [3](#_Toc233299592)](#_Toc233299592)
+- [Funcionamiento General](#funcionamiento-general)
 
-[1.6 Diseño de Escenarios
-[4](#diseño-de-escenarios)](#diseño-de-escenarios)
+- [Descripción de Componentes](#descripción-de-componentes)
 
-[1.7 Planificación de Niveles
-[4](#planificación-de-niveles)](#planificación-de-niveles)
+- [Prefabs](#prefabs)
+  - [Escenas](#escenas)
 
-[1.8 Selección de Herramientas
-[4](#selección-de-herramientas)](#selección-de-herramientas)
+- [Configuración del Proyecto](#configuración-del-proyecto)
 
-[1.9 Planificación del Desarrollo
-[5](#planificación-del-desarrollo)](#planificación-del-desarrollo)
-
-[2 etapa de Planificación y Diseño
-[5](#etapa-de-planificación-y-diseño)](#etapa-de-planificación-y-diseño)
-
-[2.11 Desarrollo de la Base del Proyecto
-[6](#desarrollo-de-la-base-del-proyecto)](#desarrollo-de-la-base-del-proyecto)
-
-[2.12 Implementación de Mecánicas Básicas
-[6](#implementación-de-mecánicas-básicas)](#implementación-de-mecánicas-básicas)
-
-[3.Creación del Proyecto
-[6](#creación-del-proyecto)](#creación-del-proyecto)
-
-[4 Capítulo 1 – Nivel 1 [7](#capítulo-1-nivel-1)](#capítulo-1-nivel-1)
-
-[4.1 Stack Tecnológico [7](#stack-tecnológico)](#stack-tecnológico)
-
-[5 estructura de Archivos del Proyecto
-[8](#estructura-de-archivos-del-proyecto)](#estructura-de-archivos-del-proyecto)
-
-[6 funcionamiento General
-[9](#funcionamiento-general)](#funcionamiento-general)
-
-[7 Descripción de Componentes
-[9](#descripción-de-componentes)](#descripción-de-componentes)
-
-[8. Prefabs [10](#prefabs)](#prefabs)
-
-[8.1 Escenas [10](#escenas)](#escenas)
-
-[9. Configuración del Proyecto
-[10](#configuración-del-proyecto)](#configuración-del-proyecto)
-
-[10. Recursos Visuales [10](#recursos-visuales)](#recursos-visuales)
+- [Recursos Visuales](#recursos-visuales)
 
 1\. Preproducción del Proyecto
 
