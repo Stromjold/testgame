@@ -9,8 +9,8 @@ Tierra de nadie
 Colaboradores: Derek Philip Lemus Sepúlveda – Luis Alberto González
 Toledo- Martín Matías Díaz coloma - Vicente Fernando Cossío Gallardo\
 Docente a cargo: Francisco Villarroel\
-Fecha de modificaciones: 25-06-2026\
-Fecha de entrega: 11/07/2026
+Fecha de modificaciones: 06-07-2026\
+Fecha de entrega: 17/07/2026
 
 # Índice
 
