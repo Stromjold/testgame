@@ -9,8 +9,8 @@ Tierra de nadie
 Colaboradores: Derek Philip Lemus Sepúlveda – Luis Alberto González
 Toledo- Martín Matías Díaz coloma - Vicente Fernando Cossío Gallardo\
 Docente a cargo: Francisco Villarroel\
-Fecha de modificaciones: 25-06-2026\
-Fecha de entrega: 11/07/2026
+Fecha de modificaciones: 06-07-2026\
+Fecha de entrega: 17/07/2026
 
 # Índice
 
@@ -46,6 +46,8 @@ Fecha de entrega: 11/07/2026
 - [Configuración del Proyecto](#configuración-del-proyecto)
 
 - [Recursos Visuales](#recursos-visuales)
+
+- [Cambios Recientes](#cambios-recientes)
 
 1\. Preproducción del Proyecto
 
@@ -211,7 +213,7 @@ manera:
 Para el desarrollo del proyecto se seleccionaron las siguientes
 herramientas tecnológicas:
 
-- Unity 6.5 como motor de desarrollo.
+- Unity 6000.5.0f1 como motor de desarrollo.
 
 - Lenguaje de programación C#.
 
@@ -279,8 +281,8 @@ Identificación de recursos gráficos necesarios para el desarrollo.
 ## 2.11 Desarrollo de la Base del Proyecto
 
 Se procede a la configuración inicial del entorno de trabajo utilizando
-Unity 6.5 y el pipeline Universal Render Pipeline (URP) para desarrollo
-2D.
+Unity 6000.5.0f1 y el pipeline Universal Render Pipeline (URP) para
+desarrollo 2D.
 
 Actividades realizadas:
 
@@ -356,17 +358,41 @@ jugador debe superar.
 **Framework / Runtime:** Unity 6000.5.0f1 + Universal Render Pipeline
 (URP) + 2D
 
-**Librerías Notables:**
+**Librerías Notables y su función:**
 
-- com.unity.render-pipelines.universal
+- com.unity.render-pipelines.universal: renderizado URP para los fondos, luces y efectos del proyecto 2D.
 
-- com.unity.inputsystem
+- com.unity.inputsystem: sistema de entrada moderno para controles y futuras interacciones del jugador.
 
-- com.unity.ugui
+- com.unity.ugui: interfaz gráfica usada en barras, textos, menús y pantallas de carga.
 
-- com.unity.timeline
+- TextMeshPro: texto de alta calidad para contadores, rótulos y elementos de UI.
 
-- com.unity.2d.sprite/com.unity.3d.tilemap/com.unity.2d.animation
+- com.unity.2d.sprite: soporte para sprites 2D, animación básica y uso de imágenes del juego.
+
+- com.unity.2d.tilemap: base para escenarios 2D y mapeo de superficies si se amplía el nivel.
+
+- com.unity.2d.animation: animación 2D para personajes y recursos visuales.
+
+- com.unity.timeline: secuencias narrativas, introducciones y posibles cinemáticas.
+
+- com.unity.visualscripting: apoyo visual para prototipado o lógica complementaria.
+
+- com.unity.test-framework: validación y pruebas del proyecto durante el desarrollo.
+
+## 4.2 Cambios recientes en la escena de carga
+
+La escena [Assets/Scenes/niveles/cap1/pantallacarga.unity](../Assets/Scenes/niveles/cap1/pantallacarga.unity) recibió ajustes visuales y de jerarquía para dejar la pantalla de carga más limpia y centrada.
+
+Los cambios más importantes son:
+
+- Se añadió un objeto de UI llamado LogoCarga para mostrar el logo en la pantalla de carga.
+
+- Se incorporó un texto TMP nuevo para mensajes o títulos del nivel.
+
+- Se corrigió la posición y la escala del elemento principal para que la interfaz quede centrada y no dependa de un escalado exagerado.
+
+- La escena queda mejor preparada para mostrar una carga más clara y coherente con el estilo visual del juego.
 
 # 5 estructura de Archivos del Proyecto 
 
@@ -395,56 +421,97 @@ jugador debe superar.
 
 # 7 Descripción de Componentes 
 
-7.1 Scripts
+## 7.1 Scripts
 
-Assets/Scripts/Spawner.cs
+Assets/Scripts/capitulo1/Nivel1/GameManager.cs
+
+- Controla el estado central de la partida con un patrón singleton.
+
+- Lleva la cuenta de enemigos eliminados, recursos y puntos.
+
+- Actualiza textos de UI con TextMeshProUGUI e imagen de progreso.
+
+- RegistrarMuerte() suma puntos, incrementa la meta cumplida y declara victoria al completar el objetivo.
+
+- RecogerRecurso() centraliza la suma de Cristal, Artefacto, Oscura y Orbe.
+
+Assets/Scripts/capitulo1/Nivel1/Spawner.cs
 
 - Arranca una corrutina en Start().
 
-- Genera enemigos de forma infinita cada tiempoEntreEnemigos.
+- Genera enemigos de forma continua cada tiempoEntreEnemigos.
 
-- Usa enemigoPrefab como prefab de aparición.
+- Usa enemigoPrefab como prefab de aparición y lo instancia en la posición del spawner.
 
-Assets/Scripts/Enemy.cs
+Assets/Scripts/capitulo1/Nivel1/Enemy.cs
 
 - Lee la primera posición de Waypoints.points en Start().
 
 - Se mueve hacia el waypoint actual en Update().
 
-- Avanza al siguiente waypoint al acercarse.
+- Avanza al siguiente waypoint al acercarse y se destruye al llegar al final.
 
 - Tiene vida (health) y recibe daño con TakeDamage(int damage).
 
-- Se destruye al llegar al final o al morir.
+- Al morir llama a GameManager.instance.RegistrarMuerte().
 
-Assets/Scripts/Waypoints.cs
+Assets/Scripts/capitulo1/Nivel1/Waypoints.cs
 
-- Construye un arreglo estático points con los hijos del objeto que lo
-  contiene.
+- Construye un arreglo estático points con los hijos del objeto que lo contiene.
 
 - Sirve como ruta compartida para los enemigos.
 
-Assets/Scripts/Soldier.cs
+- Su valor se arma en Awake(), antes de que los enemigos empiecen a moverse.
 
-- Busca enemigos con tag "Enemy".
+Assets/Scripts/capitulo1/Nivel1/Soldier.cs
+
+- Busca enemigos con tag Enemy.
 
 - Elige el más cercano dentro de range.
 
-- Rota el soldado hacia el objetivo.
+- Rota el soldado hacia el objetivo antes de disparar.
 
 - Instancia bulletPrefab y le pasa el objetivo con Seek().
 
-- Dibuja el rango en el editor con gizmos.
+- Usa OnDrawGizmosSelected() para visualizar el rango en el editor.
 
-Assets/Scripts/Bullet.cs
+Assets/Scripts/capitulo1/Nivel1/Bullet.cs
 
 - Guarda un target asignado por Seek().
 
 - Se mueve hacia el objetivo cada frame.
 
-- Si el enemigo desaparece, la bala se destruye.
+- Si el enemigo desaparece, la bala se destruye para evitar errores.
 
-- Al impactar, destruye al enemigo y a sí misma.
+- Al impactar llama a Enemy.TakeDamage(1) y luego se destruye a sí misma.
+
+Assets/Scripts/capitulo1/Nivel1/MenuInteractivo.cs
+
+- Mantiene el menú oculto al iniciar la escena.
+
+- Usa OnMouseDown() para alternar la visibilidad de menuCanvas.
+
+- Sirve como control interactivo simple para nodos o paneles de interfaz.
+
+Assets/Scripts/capitulo1/Nivel1/ControladorSlideshow.cs
+
+- Cambia imágenes de fondo con un arreglo de Sprite.
+
+- Usa Image de UGUI para mostrar cada escena visual.
+
+- Controla el tiempo entre imágenes con temporizador y tiempoPorImagen.
+
+- Reinicia el ciclo al llegar al final del arreglo.
+
+Assets/Scripts/capitulo1/Nivel1/movimiento/RecursoDrop.cs
+
+- Detecta colisiones con un Collider2D en modo trigger.
+
+- Si quien recoge el recurso tiene tag Player, suma el recurso al GameManager.
+
+- Soporta cuatro tipos: Cristal, Artefacto, Oscura y Orbe.
+
+- Destruye el objeto al ser recogido para limpiar el escenario.
 
 # 8. Prefabs 
 
@@ -472,7 +539,9 @@ Assets/Scripts/Bullet.cs
 
 **Assets/Scenes/niveles/**
 
-- Subcarpeta de niveles (sin escenas internas listadas aún).
+- Subcarpeta de niveles con escenas por capítulo.
+
+- La escena [Assets/Scenes/niveles/cap1/pantallacarga.unity](../Assets/Scenes/niveles/cap1/pantallacarga.unity) se usa como pantalla de carga del capítulo 1.
 
 # 9. Configuración del Proyecto 
 
@@ -515,3 +584,14 @@ Organización por capítulos:
 - capitulo 4/
 
 - capitulo 5/
+
+# 11. Cambios Recientes
+
+- Se actualizó la documentación para reflejar los scripts reales presentes en Assets/Scripts.
+
+- Se amplió la descripción de la lógica del nivel 1 con GameManager, MenuInteractivo, ControladorSlideshow y RecursoDrop.
+
+- Se documentaron los paquetes principales del proyecto y su función dentro del flujo de trabajo.
+
+- Se registraron los cambios visuales recientes de la escena de carga de capítulo 1.
+g
