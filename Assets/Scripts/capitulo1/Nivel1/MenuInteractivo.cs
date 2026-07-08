@@ -3,7 +3,7 @@ using UnityEngine;
 public class MenuInteractivo : MonoBehaviour
 {
     [Header("Interfaz del Nodo")]
-    public GameObject menuCanvas; // La ranura para tu menú de Canva
+    public GameObject menuCanvas; // La ranura para tu menú de Canva (el perfil del soldado)
 
     void Start()
     {
@@ -14,8 +14,8 @@ public class MenuInteractivo : MonoBehaviour
         }
     }
 
-    // Esta función nativa de Unity se activa automáticamente al hacer clic sobre el BoxCollider2D
-    void OnMouseDown()
+    // NUEVO: Esta función es pública para que el botón de Unity pueda llamarla
+    public void AlternarMenu()
     {
         if (menuCanvas != null)
         {
