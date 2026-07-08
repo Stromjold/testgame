@@ -71,10 +71,12 @@ La forma de documentar se rige bajo una estructura de carácter iterativo. Esta 
 Respecto a la Metodología de Trabajo, se implementó un modelo ágil basado en hitos incrementales establecidos de la siguiente manera: Planificación -> Configuración Base -> Mecánicas Clave -> Integración de Contenido -> QA y Optimización.
 
 La Libertad Creativa del equipo se equilibra mediante la rigidez matemática del sistema de juego (el cual exige rutas fijas de Tower Defense) y la flexibilidad de la narrativa. El uso de Comic Strips al inicio de cada nivel permite al equipo de guion y arte explorar subtramas complejas sobre el colapso biológico sin alterar de ninguna forma la arquitectura del código base.
-3. Concepción y Diseño
-3.1 Temática
 
+3. Concepción y Diseño
+
+3.1 Temática
 La temática se desenvuelve en un ambiente postapocalíptico desolado tras un desastre nuclear severo. La progresión dramática de la trama culmina con una segunda explosión catastrófica ocurrida en el reactor número 4. Los escenarios exudan radiación, mutación biológica de las especies e instalaciones industriales abandonadas.
+
 3.2 Reglas Core del Juego (Mecánicas)
 
 La mecánica de Gestión de Defensa establece que el jugador debe posicionar soldados fijos de forma estratégica dentro del mapa para repeler las oleadas entrantes.
@@ -85,62 +87,53 @@ El Loop de Combate dicta que los soldados automatizados atacan al objetivo en ra
 
 La Economía de Drops define que los enemigos derrotados liberan ítems interactivos gestionados por el script RecursoDrop.cs. Estos se clasifican en: Cristal, Artefacto, Oscura y Orbe. El jugador debe recolectarlos mediante interacciones físicas utilizando el tag Player para sumar dicho capital al estado global de la partida.
 4. Preproducción del Proyecto
+
 4.1 Idea Inicial
-
 El proyecto Tierra de Nadie surge con el objetivo de desarrollar un videojuego orientado a estrategia y supervivencia, ambientado en un mundo postapocalíptico inspirado en un desastre nuclear. La idea principal es que el jugador controle diferentes unidades para enfrentar criaturas mutadas y sobrevivir en entornos contaminados, mientras descubre los hechos que llevaron al colapso de la zona afectada.
+
 4.2 Investigación y Referencias
-
 Antes de comenzar la creación del proyecto, se investigaron referencias narrativas y mecánicas de juego en títulos de estrategia y defensa, incluyendo ejemplos de juegos populares y alternativas de plataformas web. Como resultado del análisis realizado por el equipo, se definió que el género base para el desarrollo sería tower defense.
+
 4.3 Definición de Objetivos
-
 Durante la etapa de planificación se establecieron los siguientes objetivos esenciales: crear un videojuego funcional utilizando Unity, permitir la selección de personajes/unidades para la partida y diseñar una historia dividida formalmente en capítulos. Aunado a esto, se busca implementar distintos niveles de dificultad, incorporar enemigos con comportamientos automáticos, desarrollar un sistema de combate fluido entre soldados y enemigos, y generar una experiencia visual coherente con la temática postapocalíptica.
+
 4.4 Diseño de la Historia
-
 Se definió una narrativa compuesta por cinco capítulos que relatan acontecimientos cronológicos desde el desastre inicial hasta una segunda explosión en el reactor número 4. Cada capítulo representa una etapa distinta y permite al jugador conocer nuevos escenarios, personajes y desafíos. Para facilitar la comprensión de la trama, se incorporan Comic Strips al inicio de cada nivel.
+
 4.5 Diseño de Personajes
-
 Se planificaron tres categorías principales de entidades para el entorno de juego: los Soldados, que actúan como fuerzas defensivas con capacidad de ataque a distancia; los Enemigos mutantes, que corresponden a criaturas afectadas por la radiación que avanzan por rutas fijas; y los Personajes secundarios, que sirven como apoyo narrativo para el desarrollo de la historia.
+
 4.6 Diseño de Escenarios
-
 Los escenarios fueron diseñados en ambientes inspirados en zonas contaminadas, instalaciones abandonadas y áreas afectadas por mutaciones biológicas. Se definieron cinco escenarios principales (uno por capítulo), cada uno con variaciones de dificultad y progresión visual.
+
 4.7 Planificación de Niveles
-
 El juego fue organizado en cinco capítulos bien estructurados. Cada capítulo contempla tres niveles de dificultad: Fácil, Medio y Difícil. En total, se planificaron 15 niveles distribuidos equitativamente de la siguiente manera: Capítulo 1 cuenta con 3 niveles, Capítulo 2 posee 3 niveles, Capítulo 3 integra 3 niveles, Capítulo 4 añade 3 niveles y el Capítulo 5 concluye con 3 niveles.
+
 4.8 Selección de Herramientas
-
 Para el desarrollo técnico se seleccionaron las siguientes herramientas profesionales: Unity 6000.5.0f1 como motor de desarrollo principal, C# como lenguaje de programación, Universal Render Pipeline (URP) para los gráficos 2D, y una estructura estricta de carpetas para el control y organización de recursos.
+
 4.9 Planificación del Desarrollo (Hitos)
-
 Se estableció una metodología de trabajo basada en etapas ordenadas y secuenciales. La primera es Planificación y diseño (Definición de narrativa, estructuración de capítulos en formato de viñetas, diseño preliminar de personajes y escenarios). La segunda es la Configuración del proyecto base (Creación del proyecto test3, setup de URP 2D, organización inicial de carpetas). La tercera corresponde a la Implementación de mecánicas básicas (Desarrollo de la lógica principal: Spawner, Enemy, Soldier, Bullet, Waypoints). Las fases finales comprenden el Desarrollo de niveles individuales, la Integración de recursos visuales finales, las Pruebas y corrección de errores (QA), y la Optimización junto a la documentación final.
+
 4.10 Equipo de Trabajo y Orden de Labores
-
 Las labores se dividieron de forma organizada por roles específicos. La labor de Coordinación y Game Design se encarga de la distribución de tareas, balance de dificultades por nivel y estructuración de flujos de juego. El rol de Programación y Arquitectura asume la escritura de los componentes C# (GameManager, lógicas de combate y recolección) e integración de paquetes del motor. El área de Arte y Animación realiza el diseño de sprites de personajes (Soldado1.png), enemigos (Monstruo_acuatico.png) y desarrollo visual de las viñetas narrativas (Comic Strips). Por último, QA y Documentación realiza el control de versiones en GitHub, testeo de colisiones e interfaces de usuario, y la redacción técnica de los manuales de desarrollo.
-4.11 Costo de Juego
 
+4.11 Costo de Juego
 Al ser un proyecto de carácter académico e independiente, los costos financieros directos son mínimos ($0 USD en presupuesto de licencias gracias a las versiones Personal de Unity y repositorios públicos de GitHub). El costo real se evalúa en horas de trabajo invertidas por los cuatro colaboradores a lo largo del ciclo de desarrollo, sumado al desgaste y amortización del hardware y equipos de cómputo personales empleados para las sesiones de programación y diseño.
+
 5. Arquitectura de Software del Videojuego
 5.1 Estructura de Archivos del Proyecto
-
 La raíz de Assets/ se encuentra estructurada formalmente para permitir el trabajo colaborativo sin conflictos de fusión (merge conflicts):
-
     Scripts/: Contiene la lógica pura del juego, tales como la IA de enemigos, proyectiles, comportamiento de soldados, spawners y el manejo de rutas.
-
     Prefabs/: Almacena las plantillas de objetos reutilizables en juego (ej: Bala.prefab, EnemigoPrueba.prefab).
-
     Scenes/: Aloja la escena de juego general (SampleScene.unity) y las jerarquías ordenadas por capítulos (ej: niveles/cap1/pantallacarga.unity).
-
     Settings/: Guarda las configuraciones del motor gráfico, incluyendo Renderer2D.asset, UniversalRP.asset y las plantillas de escenas lit.
-
     Sprites/: Contiene los recursos visuales 2D organizados de forma capitular (desde capitulo 1/ hasta capitulo 5/).
-
     img/: Destinada al almacenamiento de imágenes globales y assets sueltos de personajes y monstruos.
-
     Packages/: Contiene el manifiesto de dependencias instaladas en el entorno operativo de Unity.
-
     ProjectSettings/: Guarda las configuraciones globales del editor (físicas, capas de tags, resoluciones base y configuraciones de compilación).
-
+   
 5.2 Scripts y Funcionamiento General
-
 El script Spawner.cs inicia una corrutina repetitiva en su método Start(), la cual instancia de forma continua el prefab EnemigoPrueba.prefab basándose en la tasa de tiempo asignada en la variable tiempoEntreEnemigos.
 
 El componente Waypoints.cs se ejecuta en la fase temprana Awake(), recopilando de forma automática la lista de hijos del objeto contenedor para construir un arreglo estático de vectores denominado points que servirá de ruta global.
