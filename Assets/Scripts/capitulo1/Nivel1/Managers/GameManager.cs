@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro; 
-using UnityEngine.UI; // NUEVO: Librería para controlar imágenes y barras
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [Header("Reglas del Nivel")]
     public int enemigosEliminados = 0;
     public int metaEnemigos = 150; 
+    public int enemigosVivos = 0; 
+    private bool spawningTerminado = false; 
 
     [Header("Inventario")]
     public int cristales = 0;
@@ -23,9 +25,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textoOscura;
     public TextMeshProUGUI textoOrbes;
     public TextMeshProUGUI textoPuntos;
+    public TextMeshProUGUI textoEnemigosEliminados; // NUEVO: Para mostrar el total de enemigos eliminados
+    public TextMeshProUGUI textoInfoOleada; // NUEVO: Para mostrar la info de la oleada actual
 
     [Header("Barra de Progreso")]
-    public Image barraProgreso; // NUEVO: La ranura para tu barra verde
+    public Image barraProgreso; 
 
     void Awake()
     {
@@ -34,7 +38,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Forzamos a que la barra empiece vacía (0%) al iniciar el juego
         if (barraProgreso != null) barraProgreso.fillAmount = 0f; 
         ActualizarPantalla(); 
     }
@@ -42,19 +45,44 @@ public class GameManager : MonoBehaviour
     public void RegistrarMuerte()
     {
         enemigosEliminados++;
-        
-        // ¡REGLA ACTUALIZADA! Ahora suma exactamente 2 puntos por baja
+        enemigosVivos--; 
+
         puntos += 2; 
 
-        // NUEVO: Matemática para calcular el porcentaje de la barra (de 0.0 a 1.0)
         if (barraProgreso != null)
         {
             barraProgreso.fillAmount = (float)enemigosEliminados / metaEnemigos;
         }
 
         ActualizarPantalla();
+        CheckForWin(); 
+    }
 
-        if (enemigosEliminados >= metaEnemigos)
+    public void RegistrarEnemigoGenerado()
+    {
+        enemigosVivos++;
+    }
+
+    public void SpawningCompleto()
+    {
+        spawningTerminado = true;
+        Debug.Log("GameManager: El Spawner ha terminado. Comprobando condición de victoria...");
+        ActualizarTextoOleada("¡Todas las oleadas completadas!");
+        CheckForWin();
+    }
+
+    // NUEVO: El Spawner llamará a este método para actualizar la información de la oleada en la UI.
+    public void ActualizarTextoOleada(string texto)
+    {
+        if (textoInfoOleada != null)
+        {
+            textoInfoOleada.text = texto;
+        }
+    }
+
+    private void CheckForWin()
+    {
+        if (spawningTerminado && enemigosVivos <= 0)
         {
             DeclararVictoria();
         }
@@ -79,10 +107,17 @@ public class GameManager : MonoBehaviour
         if (textoOscura != null) textoOscura.text = materiaOscura.ToString();
         if (textoOrbes != null) textoOrbes.text = orbes.ToString();
         if (textoPuntos != null) textoPuntos.text = puntos.ToString();
+
+        // NUEVO: Actualizamos el texto de enemigos eliminados
+        if (textoEnemigosEliminados != null)
+        {
+            textoEnemigosEliminados.text = "Eliminados: " + enemigosEliminados;
+        }
     }
 
     void DeclararVictoria()
     {
-        Debug.Log("¡VICTORIA! El puerto está limpio.");
+        Debug.Log("¡VICTORIA! ¡Has sobrevivido a las 5 oleadas!");
+        ActualizarTextoOleada("¡VICTORIA!");
     }
 }

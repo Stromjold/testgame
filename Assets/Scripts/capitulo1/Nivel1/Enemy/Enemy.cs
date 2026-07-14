@@ -63,4 +63,15 @@ public class Enemy : MonoBehaviour
         // Destruccion del clon
         Destroy(gameObject);
     }
+
+    /// <summary>
+    /// Establece la vida inicial del enemigo.
+    /// Este método es llamado por el Spawner al instanciar el enemigo.
+    /// </summary>
+    /// <param name="nuevaVida">La cantidad de vida que tendrá el enemigo.</param>
+    public void EstablecerVida(int nuevaVida)
+    {
+        health = nuevaVida;
+        Debug.Log("Vida del enemigo establecida a: " + nuevaVida + " (desde Spawner)");
+    }
 }

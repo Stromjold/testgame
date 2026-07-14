@@ -67,5 +67,8 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "test3.slnx"
+    "dotnet.defaultSolution": "test3.slnx",
+    "vbnet.workspace.solutionPath": "",
+    "vbnet.workspace.projectPaths": [],
+    "vbnet.workspace.ignoreSolutionFiles": false
 }
