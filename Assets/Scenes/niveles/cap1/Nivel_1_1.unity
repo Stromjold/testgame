@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 77164602}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1486, y: 799, z: 0}
+  m_LocalPosition: {x: -28, y: 789, z: 0}
   m_LocalScale: {x: 185, y: 165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -438,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 251583360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -138.2, y: 745, z: 0}
+  m_LocalPosition: {x: -25, y: 334, z: 0}
   m_LocalScale: {x: 185, y: 165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1067,6 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   enemigosEliminados: 0
   metaEnemigos: 150
+  enemigosVivos: 0
   cristales: 0
   artefactos: 0
   materiaOscura: 0
@@ -1077,6 +1078,8 @@ MonoBehaviour:
   textoOscura: {fileID: 1289687113}
   textoOrbes: {fileID: 1706096288}
   textoPuntos: {fileID: 826250846}
+  textoEnemigosEliminados: {fileID: 0}
+  textoInfoOleada: {fileID: 0}
   barraProgreso: {fileID: 0}
 --- !u!4 &640909406
 Transform:
@@ -1133,7 +1136,7 @@ Transform:
   m_GameObject: {fileID: 727903201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 335, y: 584, z: 0}
+  m_LocalPosition: {x: -21, y: 493, z: 0}
   m_LocalScale: {x: 185, y: 165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2413,6 +2416,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   enemigoPrefab: {fileID: 1255915158442205365, guid: fa0956902d552674687bf1f03a966e3f, type: 3}
   tiempoEntreEnemigos: 5
+  oleadaActual: 1
+  enemigosPorOleada: 30
+  vidaEnemigosActual: 20
+  numeroDeOleadas: 5
+  tiempoEntreOleadas: 5
 --- !u!1 &1289687111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,7 +2756,7 @@ Transform:
   m_GameObject: {fileID: 1423742229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1338, y: 231, z: 0}
+  m_LocalPosition: {x: -32, y: 656, z: 0}
   m_LocalScale: {x: 185, y: 165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3219,7 +3227,7 @@ Transform:
   m_GameObject: {fileID: 1816627790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130, y: 343, z: 0}
+  m_LocalPosition: {x: -21, y: 194, z: 0}
   m_LocalScale: {x: 185, y: 165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
