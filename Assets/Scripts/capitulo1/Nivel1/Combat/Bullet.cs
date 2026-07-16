@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Transform target;
-    public float speed = 15f; // Velocidad de la bala
+    public float speed = 500f; // Velocidad de la bala
 
     // La torreta llama a esta función para decirle a la bala a quién perseguir
     public void Seek(Transform _target)
@@ -40,13 +40,13 @@ public class Bullet : MonoBehaviour
         // 1. Buscamos el "cerebro" del enemigo para poder hacerle daño
         Enemy enemigo = target.GetComponent<Enemy>();
         
-        // 2. Si lo golpeado realmente es un enemigo, le quitamos 1 punto
+        // 2. Si lo golpeado realmente es un enemigo, le quitamos 1 punto de vida
         if (enemigo != null)
         {
-            enemigo.TakeDamage(1); 
+            enemigo.TakeDamage(1); // Le hace 1 de daño (puedes subirlo si quieres)
         }
 
-        // 3. La bala se destruye al impactar, pero el enemigo decide si muere o no
-        Destroy(gameObject); 
+        // 3. La bala se destruye al impactar
+        Destroy(gameObject);
     }
 }

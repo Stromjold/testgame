@@ -4,19 +4,21 @@ public class RecursoDrop : MonoBehaviour
 {
     [Header("Configuración del Objeto")]
     [Tooltip("Escribe exactamente: Cristal, Artefacto, Oscura o Orbe")]
-    public string tipoDeRecurso = "Cristal"; 
+    public string tipoDeRecurso = "Cristal";
     public int cantidad = 1;
 
-    // Esta función se activa cuando otro objeto entra en la zona del BoxCollider (Is Trigger)
-    void OnTriggerEnter2D(Collider2D collision)
+    /// <summary>
+    /// Esta función nativa de Unity se ejecuta automáticamente cuando el jugador
+    /// hace clic izquierdo con el mouse sobre el Collider 2D de este objeto.
+    /// </summary>
+    private void OnMouseDown()
     {
-        // Revisamos si el objeto que lo tocó tiene la etiqueta "Player" (tu soldado)
-        if (collision.CompareTag("Player")) 
+        if (GameManager.instance != null)
         {
-            // Le avisamos al GameManager central que sume los puntos
+            // 1. Le avisamos al GameManager que sume los puntos (esto actualizará la tabla de tu segunda foto)
             GameManager.instance.RecogerRecurso(tipoDeRecurso, cantidad);
-            
-            // Destruimos el objeto del suelo (desaparece visualmente)
+
+            // 2. Destruimos el objeto del suelo para que desaparezca
             Destroy(gameObject);
         }
     }

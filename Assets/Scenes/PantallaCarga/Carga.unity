@@ -662,9 +662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeaf7b25b79ec7f48a6582b1bd0790b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControladorSlideshow
-  fondoPantalla: {fileID: 0}
-  imagenes: []
-  tiempoPorImagen: 3.5
 --- !u!114 &1902085982
 MonoBehaviour:
   m_ObjectHideFlags: 0

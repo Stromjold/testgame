@@ -3,108 +3,86 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Prefab del enemigo que se va a instanciar. Asignar desde el Inspector de Unity.
-    public GameObject enemigoPrefab;
-    // Tiempo en segundos entre la aparición de cada enemigo en una oleada.
-    public float tiempoEntreEnemigos = 1.5f;
+    // Esta estructura crea las casillas en el Inspector de Unity
+    [System.Serializable]
+    public struct DatosOleada
+    {
+        public string nombreDeOleada;
+        public GameObject enemigoPrefab; // Aquí arrastrarás al monstruo que quieras
+        public int cantidadDeEnemigos;
+        public int vidaEnemigos;
+        public float tiempoEntreEnemigos;
+    }
 
     [Header("Configuración de Oleadas")]
-    // Número de la oleada actual.
-    public int oleadaActual = 1;
-    // Cantidad de enemigos que aparecerán en la oleada actual.
-    public int enemigosPorOleada = 30;
-    // Vida que tendrán los enemigos de la oleada actual.
-    public int vidaEnemigosActual = 20;
-    public int numeroDeOleadas = 5; // NUEVO: Límite de oleadas
+    public DatosOleada[] listaDeOleadas; 
+    public float tiempoEntreOleadas = 5f; //   
 
-    // Tiempo de descanso en segundos entre el final de una oleada y el comienzo de la siguiente.
-    public float tiempoEntreOleadas = 5f;
-
-    // Corutina que gestiona el spawner.
+    private int oleadaActualIndex = 0;
     private Coroutine spawnerCoroutine;
 
     void Start()
     {
-        // Es una buena práctica verificar que las referencias asignadas en el editor no son nulas.
-        if (enemigoPrefab == null)
+        if (listaDeOleadas == null || listaDeOleadas.Length == 0)
         {
-            Debug.LogError("El prefab del enemigo no está asignado en el Spawner.");
-            return; // Detiene la ejecución si el prefab no está asignado.
+            Debug.LogError("No has configurado ninguna oleada en el Spawner.");
+            return;
         }
-        // Inicia la corutina que gestiona las oleadas.
+
         spawnerCoroutine = StartCoroutine(GestionarOleadas());
     }
 
     IEnumerator GestionarOleadas()
     {
-        // Bucle que se ejecuta hasta que se completen las 5 oleadas.
-        while (oleadaActual <= numeroDeOleadas)
+        while (oleadaActualIndex < listaDeOleadas.Length)
         {
-            // NUEVO: Formateamos el texto para la UI y se lo enviamos al GameManager.
-            string infoOleada = $"Oleada: {oleadaActual} / {numeroDeOleadas}\nEnemigos: {enemigosPorOleada}";
-            GameManager.instance.ActualizarTextoOleada(infoOleada);
+            DatosOleada datos = listaDeOleadas[oleadaActualIndex];
 
-            Debug.Log("Iniciando Oleada: " + oleadaActual + " de " + numeroDeOleadas);
+            // 1. Actualizamos la UI del GameManager
+            string infoOleada = $"Oleada: {oleadaActualIndex + 1} / {listaDeOleadas.Length}\nEnemigos: {datos.cantidadDeEnemigos}";
+            if(GameManager.instance != null) GameManager.instance.ActualizarTextoOleada(infoOleada);
 
-            // Bucle para generar los enemigos de la oleada actual.
-            for (int i = 0; i < enemigosPorOleada; i++)
+            // 2. Generamos los monstruos elegidos para esta oleada
+            for (int i = 0; i < datos.cantidadDeEnemigos; i++)
             {
-                // Instancia un nuevo enemigo en la posición del Spawner.
-                GameObject nuevoEnemigo = Instantiate(enemigoPrefab, transform.position, Quaternion.identity);
-                GameManager.instance.RegistrarEnemigoGenerado(); // NUEVO: Notificamos al GameManager.
+                if (datos.enemigoPrefab == null)
+                {
+                    Debug.LogError("Falta asignar el prefab del enemigo en la oleada " + (oleadaActualIndex + 1));
+                    yield break;
+                }
 
-                // Obtiene el componente 'Enemy' del enemigo recién creado para establecer su vida.
+                // Genera el monstruo en el punto de inicio
+                GameObject nuevoEnemigo = Instantiate(datos.enemigoPrefab, transform.position, Quaternion.identity);
+                if(GameManager.instance != null) GameManager.instance.RegistrarEnemigoGenerado();
+
+                // Le asignamos la vida configurada en el Inspector
                 Enemy scriptEnemigo = nuevoEnemigo.GetComponent<Enemy>();
                 if (scriptEnemigo != null)
                 {
-                    // Establece la vida del enemigo según la oleada actual.
-                    scriptEnemigo.EstablecerVida(vidaEnemigosActual);
-                }
-                else
-                {
-                    Debug.LogWarning("El prefab del enemigo no tiene el script 'Enemy' adjunto.");
+                    scriptEnemigo.EstablecerVida(datos.vidaEnemigos);
                 }
 
-                // Espera un tiempo antes de generar el siguiente enemigo.
-                yield return new WaitForSeconds(tiempoEntreEnemigos);
+                yield return new WaitForSeconds(datos.tiempoEntreEnemigos);
             }
 
-            // --- LA OLEADA HA TERMINADO DE APARECER ---
+            // --- LA OLEADA HA TERMINADO ---
+            oleadaActualIndex++;
 
-            // Si aún no hemos llegado a la última oleada, preparamos la siguiente.
-            if (oleadaActual < numeroDeOleadas)
+            if (oleadaActualIndex < listaDeOleadas.Length)
             {
-                 // Prepara los valores para la siguiente oleada.
-                oleadaActual++;
-                enemigosPorOleada += 15;   // Incrementa en 15 la cantidad de enemigos para la próxima oleada.
-                vidaEnemigosActual += 10;  // Aumenta en 10 la vida de los enemigos para la próxima oleada.
-
-                Debug.Log("Oleada " + (oleadaActual - 1) + " finalizada. La siguiente oleada comenzará en " + tiempoEntreOleadas + " segundos.");
-
-                // Espera un tiempo antes de empezar la siguiente oleada.
                 yield return new WaitForSeconds(tiempoEntreOleadas);
-            }
-            else
-            {
-                // Si ya completamos la última oleada, simplemente salimos del bucle.
-                oleadaActual++; 
             }
         }
 
-        // --- TODAS LAS OLEADAS HAN TERMINADO ---
-        Debug.Log("Todas las oleadas han sido generadas. El Spawner ha terminado.");
-        GameManager.instance.SpawningCompleto(); // NUEVO: Notificamos al GameManager que hemos terminado.
+        // --- TODAS LAS OLEADAS COMPLETADAS ---
+        if(GameManager.instance != null) GameManager.instance.SpawningCompleto();
     }
 
-    /// <summary>
-    /// Detiene la generación de enemigos.
-    /// </summary>
     public void DetenerSpawner()
     {
         if (spawnerCoroutine != null)
         {
             StopCoroutine(spawnerCoroutine);
-            Debug.Log("El Spawner ha sido detenido.");
         }
     }
 }

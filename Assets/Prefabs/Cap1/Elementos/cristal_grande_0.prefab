@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3907477008776943067}
   - component: {fileID: 348917460634272710}
   - component: {fileID: 1655556069097353584}
+  - component: {fileID: -3564700948373604898}
   m_Layer: 0
   m_Name: cristal_grande_0
   m_TagString: Untagged
@@ -115,3 +116,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3564700948373604898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344199083464123130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09318b68879af704eae98c966ab80c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RecursoDrop
+  tipoDeRecurso: Cristal
+  cantidad: 1

@@ -9,11 +9,14 @@ public class Enemy : MonoBehaviour
 
     private Transform target;
     private int waypointIndex = 0;
+    private Animator anim;
     
     void Start()
     {
         // Verificamos que existan puntos suficientes en la ruta
         if (Waypoints.points == null || Waypoints.points.Length <= 1) return;
+
+        anim = GetComponent<Animator>();
         
         // Le indicamos que su primer objetivo real es el Punto_1
         waypointIndex = 1; 
@@ -58,10 +61,20 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        // Le avisamos al  paneel que suba el punto del enemigo caido
-        GameManager.instance.RegistrarMuerte();
-        // Destruccion del clon
-        Destroy(gameObject);
+        // 1. NUEVO: Le quitamos la etiqueta para que los soldados lo ignoren inmediatamente
+        gameObject.tag = "Untagged"; 
+
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.RegistrarMuerte();
+        }
+        
+        speed = 0;
+        if (anim != null)
+        {
+            anim.SetTrigger("TriggerMuerte");
+        }
+        Destroy(gameObject, 1f); 
     }
 
     /// <summary>
