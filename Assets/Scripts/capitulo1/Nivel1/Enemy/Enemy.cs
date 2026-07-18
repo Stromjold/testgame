@@ -1,24 +1,41 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))] 
 public class Enemy : MonoBehaviour
 {
     public float speed = 10000f;
     
     [Header("Resistencia")]
-    public int health = 5; // La cantidad de balas que resiste el mutante
+    public int health = 5; 
+
+    [Header("Efectos de Sonido")]
+    public AudioClip sonidoImpacto;
+    public AudioClip sonidoMuerte;
+    // --- NUEVO: Sonido de ambiente/gruñido ---
+    public AudioClip sonidoAmbiente; 
+
+    // --- NUEVO: Control del tiempo de gruñidos ---
+    [Header("Configuración de Ambiente")]
+    public float tiempoMinGruñido = 3f; // Tiempo mínimo antes de volver a gruñir
+    public float tiempoMaxGruñido = 8f; // Tiempo máximo
+    private float timerGruñido;
 
     private Transform target;
     private int waypointIndex = 0;
     private Animator anim;
+    private AudioSource audioSource; 
     
     void Start()
     {
-        // Verificamos que existan puntos suficientes en la ruta
+        audioSource = GetComponent<AudioSource>();
+
+        // NUEVO: Le damos un tiempo aleatorio inicial para su primer gruñido
+        timerGruñido = Random.Range(tiempoMinGruñido, tiempoMaxGruñido);
+
         if (Waypoints.points == null || Waypoints.points.Length <= 1) return;
 
         anim = GetComponent<Animator>();
         
-        // Le indicamos que su primer objetivo real es el Punto_1
         waypointIndex = 1; 
         target = Waypoints.points[waypointIndex];
     }
@@ -34,6 +51,21 @@ public class Enemy : MonoBehaviour
         {
             GetNextWaypoint();
         }
+
+        // --- NUEVO: Lógica del gruñido durante el transcurso del juego ---
+        if (sonidoAmbiente != null && audioSource != null && health > 0)
+        {
+            timerGruñido -= Time.deltaTime; // El reloj va marcha atrás
+
+            if (timerGruñido <= 0f)
+            {
+                // Reproduce el gruñido
+                audioSource.PlayOneShot(sonidoAmbiente);
+                
+                // Reinicia el reloj con un nuevo tiempo aleatorio
+                timerGruñido = Random.Range(tiempoMinGruñido, tiempoMaxGruñido);
+            }
+        }
     }
 
     void GetNextWaypoint()
@@ -48,10 +80,14 @@ public class Enemy : MonoBehaviour
         target = Waypoints.points[waypointIndex];
     }
 
-    // Nueva función: El enemigo recibe daño y calcula si debe morir
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        if (sonidoImpacto != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(sonidoImpacto);
+        }
 
         if (health <= 0)
         {
@@ -61,8 +97,12 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        // 1. NUEVO: Le quitamos la etiqueta para que los soldados lo ignoren inmediatamente
         gameObject.tag = "Untagged"; 
+
+        if (sonidoMuerte != null)
+        {
+            AudioSource.PlayClipAtPoint(sonidoMuerte, transform.position);
+        }
 
         if (GameManager.instance != null)
         {
@@ -77,11 +117,6 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject, 1f); 
     }
 
-    /// <summary>
-    /// Establece la vida inicial del enemigo.
-    /// Este método es llamado por el Spawner al instanciar el enemigo.
-    /// </summary>
-    /// <param name="nuevaVida">La cantidad de vida que tendrá el enemigo.</param>
     public void EstablecerVida(int nuevaVida)
     {
         health = nuevaVida;
