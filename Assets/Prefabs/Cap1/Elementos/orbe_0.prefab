@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 600.2529, y: 410.1581, z: 0}
-  m_LocalScale: {x: 90, y: 90, z: 1}
+  m_LocalScale: {x: 150, y: 150, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3485638056935749882, guid: 019cbd127339b6c4782abf9c075041f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RecursoDrop
   tipoDeRecurso: Orbe
   cantidad: 1
-  alturaSalto: 1.5
-  duracionSalto: 0.5
+  tiempoParaAutoRecogida: 3
+  tiempoDesaparicion: 2
 --- !u!61 &3434248768393579551
 BoxCollider2D:
   m_ObjectHideFlags: 0

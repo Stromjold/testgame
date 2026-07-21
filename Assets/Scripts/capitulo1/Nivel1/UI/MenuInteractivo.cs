@@ -12,6 +12,8 @@ public class MenuInteractivo : MonoBehaviour
         {
             menuCanvas.SetActive(false);
         }
+
+        GameLogger.LogToFile("MenuInteractivo", "Menú interactivo inicializado. Canvas oculto al iniciar.");
     }
 
     // NUEVO: Esta función es pública para que el botón de Unity pueda llamarla
@@ -22,6 +24,11 @@ public class MenuInteractivo : MonoBehaviour
             // Alternador (Toggle): Si está apagado lo prende, y si está prendido lo apaga
             bool estadoActual = menuCanvas.activeSelf;
             menuCanvas.SetActive(!estadoActual);
+            GameLogger.LogToFile("MenuInteractivo", $"Menú interactivo alternado. Nuevo estado visible: {!estadoActual}");
+        }
+        else
+        {
+            GameLogger.LogToFile("MenuInteractivo", "[ADVERTENCIA] No se pudo alternar el menú porque menuCanvas es NULL.");
         }
     }
 }

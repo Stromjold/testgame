@@ -1,0 +1,525 @@
+=== REPORTE DE DIAGNÓSTICO DE ESCENA: Nivel_1_1 ===
+> Objeto: Main Camera | Activo: True
+  PosMundial: (953.00, 537.00, -10.00) | PosLocal: (953.00, 537.00, -10.00) | Escala: (50.00, 66.67, 1.67)
+  Componentes: Transform, Camera, AudioListener, UniversalAdditionalCameraData, 
+
+> Objeto: RutaEnemigos | Activo: True
+  PosMundial: (17747.00, 2527.50, 0.00) | PosLocal: (17747.00, 2527.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: Transform, Waypoints, AudioSource, 
+
+--> Objeto: Pasaje1 | Activo: True
+--  PosMundial: (8055.00, 1248.50, 0.00) | PosLocal: (-9692.00, -1279.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: Transform, 
+
+----> Objeto: Punto_0 | Activo: True
+----  PosMundial: (1929.00, 422.50, 0.00) | PosLocal: (-6126.00, -826.00, 0.00) | Escala: (150.00, 150.00, 0.96)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_1 | Activo: True
+----  PosMundial: (1516.00, 375.50, 0.00) | PosLocal: (-6539.00, -873.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_2 | Activo: True
+----  PosMundial: (1114.00, 369.50, 0.00) | PosLocal: (-6941.00, -879.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_3 | Activo: True
+----  PosMundial: (728.00, 395.50, 0.00) | PosLocal: (-7327.00, -853.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_4 | Activo: True
+----  PosMundial: (524.00, 406.50, 0.00) | PosLocal: (-7531.00, -842.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_5 | Activo: True
+----  PosMundial: (153.00, 465.50, 0.00) | PosLocal: (-7902.00, -783.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+--> Objeto: Pasaje2 | Activo: True
+--  PosMundial: (8055.00, 1248.50, 0.00) | PosLocal: (-9692.00, -1279.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: Transform, 
+
+----> Objeto: Punto_0 | Activo: True
+----  PosMundial: (1929.00, 422.50, 0.00) | PosLocal: (-6126.00, -826.00, 0.00) | Escala: (150.00, 150.00, 0.96)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_1 | Activo: True
+----  PosMundial: (1516.00, 375.50, 0.00) | PosLocal: (-6539.00, -873.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_2 | Activo: True
+----  PosMundial: (1114.00, 369.50, 0.00) | PosLocal: (-6941.00, -879.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_3 | Activo: True
+----  PosMundial: (728.00, 395.50, 0.00) | PosLocal: (-7327.00, -853.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_4 | Activo: True
+----  PosMundial: (524.00, 535.50, 0.00) | PosLocal: (-7531.00, -713.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_5 | Activo: True
+----  PosMundial: (153.00, 659.50, 0.00) | PosLocal: (-7902.00, -589.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+--> Objeto: Pasaje3 | Activo: True
+--  PosMundial: (8055.00, 1248.50, 0.00) | PosLocal: (-9692.00, -1279.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: Transform, 
+
+----> Objeto: Punto_0 | Activo: True
+----  PosMundial: (1929.00, 422.50, 0.00) | PosLocal: (-6126.00, -826.00, 0.00) | Escala: (150.00, 150.00, 0.96)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_1 | Activo: True
+----  PosMundial: (1516.00, 375.50, 0.00) | PosLocal: (-6539.00, -873.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_2 | Activo: True
+----  PosMundial: (1114.00, 369.50, 0.00) | PosLocal: (-6941.00, -879.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_3 | Activo: True
+----  PosMundial: (728.00, 395.50, 0.00) | PosLocal: (-7327.00, -853.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_4 | Activo: True
+----  PosMundial: (524.00, 570.50, 0.00) | PosLocal: (-7531.00, -678.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_5 | Activo: True
+----  PosMundial: (153.00, 801.50, 0.00) | PosLocal: (-7902.00, -447.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+--> Objeto: Pasaje4 | Activo: True
+--  PosMundial: (8055.00, 1248.50, 0.00) | PosLocal: (-9692.00, -1279.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: Transform, 
+
+----> Objeto: Punto_0 | Activo: True
+----  PosMundial: (1929.00, 422.50, 0.00) | PosLocal: (-6126.00, -826.00, 0.00) | Escala: (150.00, 150.00, 0.96)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_1 | Activo: True
+----  PosMundial: (1516.00, 375.50, 0.00) | PosLocal: (-6539.00, -873.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_2 | Activo: True
+----  PosMundial: (1114.00, 369.50, 0.00) | PosLocal: (-6941.00, -879.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_3 | Activo: True
+----  PosMundial: (728.00, 395.50, 0.00) | PosLocal: (-7327.00, -853.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_4 | Activo: True
+----  PosMundial: (524.00, 290.50, 0.00) | PosLocal: (-7531.00, -958.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_5 | Activo: True
+----  PosMundial: (170.00, 314.50, 0.00) | PosLocal: (-7885.00, -934.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+--> Objeto: Pasaje5 | Activo: True
+--  PosMundial: (8055.00, 1248.50, 0.00) | PosLocal: (-9692.00, -1279.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: Transform, 
+
+----> Objeto: Punto_0 | Activo: True
+----  PosMundial: (1929.00, 422.50, 0.00) | PosLocal: (-6126.00, -826.00, 0.00) | Escala: (150.00, 150.00, 0.96)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_1 | Activo: True
+----  PosMundial: (1516.00, 375.50, 0.00) | PosLocal: (-6539.00, -873.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_2 | Activo: True
+----  PosMundial: (1114.00, 369.50, 0.00) | PosLocal: (-6941.00, -879.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_3 | Activo: True
+----  PosMundial: (728.00, 395.50, 0.00) | PosLocal: (-7327.00, -853.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_4 | Activo: True
+----  PosMundial: (524.00, 281.50, 0.00) | PosLocal: (-7531.00, -967.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Punto_5 | Activo: True
+----  PosMundial: (153.00, 206.50, 0.00) | PosLocal: (-7902.00, -1042.00, 0.00) | Escala: (150.00, 150.00, 1.00)
+----  Componentes: Transform, SpriteRenderer, 
+
+> Objeto: Posiciónes | Activo: True
+  PosMundial: (190.00, 0.36, 0.00) | PosLocal: (190.00, 0.36, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: Transform, ControlSoldados, 
+
+--> Objeto: Pos1 | Activo: True
+--  PosMundial: (162.00, 789.36, 0.00) | PosLocal: (-28.00, 789.00, 0.00) | Escala: (100.00, 105.00, 1.00)
+--  Componentes: Transform, SpriteRenderer, BoxCollider2D, 
+
+----> Objeto: Canvas | Activo: True
+----  PosMundial: (960.00, 540.00, 0.00) | PosLocal: (7.98, -2.37, 0.00) | Escala: (0.01, 0.01, 1.00)
+----  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, 
+
+------> Objeto: Solider1 | Activo: True
+------  PosMundial: (200.10, 797.00, 0.00) | PosLocal: (-759.90, 257.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, Image, Animator, 
+
+------> Objeto: punto disparo | Activo: True
+------  PosMundial: (197.50, 793.50, 0.00) | PosLocal: (-762.50, 253.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, 
+
+--> Objeto: Pos2 | Activo: True
+--  PosMundial: (158.00, 656.36, 0.00) | PosLocal: (-32.00, 656.00, 0.00) | Escala: (100.00, 105.00, 1.00)
+--  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Canvas | Activo: True
+----  PosMundial: (960.00, 540.00, 0.00) | PosLocal: (8.02, -1.11, 0.00) | Escala: (0.01, 0.01, 1.00)
+----  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, 
+
+------> Objeto: Solider2 | Activo: True
+------  PosMundial: (200.10, 666.00, 0.00) | PosLocal: (-759.90, 126.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, Image, Animator, 
+
+------> Objeto: punto disparo | Activo: True
+------  PosMundial: (197.50, 658.70, 0.00) | PosLocal: (-762.50, 118.70, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, 
+
+--> Objeto: Pos3 | Activo: True
+--  PosMundial: (169.00, 493.36, 0.00) | PosLocal: (-21.00, 493.00, 0.00) | Escala: (100.00, 105.00, 1.00)
+--  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Canvas | Activo: True
+----  PosMundial: (960.00, 540.00, 0.00) | PosLocal: (7.91, 0.44, 0.00) | Escala: (0.01, 0.01, 1.00)
+----  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, 
+
+------> Objeto: Solider3 | Activo: True
+------  PosMundial: (204.00, 500.00, 0.00) | PosLocal: (-756.00, -40.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, Image, Animator, 
+
+------> Objeto: punto disparo | Activo: True
+------  PosMundial: (203.20, 499.80, 0.00) | PosLocal: (-756.80, -40.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, 
+
+--> Objeto: Pos4 | Activo: True
+--  PosMundial: (165.00, 334.36, 0.00) | PosLocal: (-25.00, 334.00, 0.00) | Escala: (100.00, 105.00, 1.00)
+--  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Canvas | Activo: True
+----  PosMundial: (960.00, 540.00, 0.00) | PosLocal: (7.95, 1.96, 0.00) | Escala: (0.01, 0.01, 1.00)
+----  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, 
+
+------> Objeto: Solider4 | Activo: True
+------  PosMundial: (208.50, 343.00, 0.00) | PosLocal: (-751.50, -197.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, Image, Animator, 
+
+------> Objeto: punto disparo (1) | Activo: True
+------  PosMundial: (198.20, 327.80, 0.00) | PosLocal: (-761.80, -212.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, 
+
+--> Objeto: Pos5 | Activo: True
+--  PosMundial: (169.00, 194.36, 0.00) | PosLocal: (-21.00, 194.00, 0.00) | Escala: (100.00, 105.00, 1.00)
+--  Componentes: Transform, SpriteRenderer, 
+
+----> Objeto: Canvas | Activo: True
+----  PosMundial: (960.00, 540.00, 0.00) | PosLocal: (7.91, 3.29, 0.00) | Escala: (0.01, 0.01, 1.00)
+----  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, 
+
+------> Objeto: Solider5 | Activo: True
+------  PosMundial: (205.50, 206.90, 0.00) | PosLocal: (-754.50, -333.10, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, Image, Animator, 
+
+------> Objeto: punto disparo (1) | Activo: True
+------  PosMundial: (203.00, 204.80, 0.00) | PosLocal: (-757.00, -335.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, 
+
+> Objeto: Audio Source | Activo: True
+  PosMundial: (353.98, 623.89, 0.00) | PosLocal: (353.98, 623.89, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: Transform, AudioSource, 
+
+> Objeto: GameManager | Activo: True
+  PosMundial: (800.00, 244.00, 0.00) | PosLocal: (800.00, 244.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: Transform, GameManager, 
+
+> Objeto: Fondo | Activo: True
+  PosMundial: (960.92, 539.10, 0.00) | PosLocal: (960.92, 539.10, 0.00) | Escala: (111.49, 122.10, 1.00)
+  Componentes: Transform, SpriteRenderer, 
+
+> Objeto: Lienzo_Maestro | Activo: True
+  PosMundial: (960.00, 540.00, 0.00) | PosLocal: (960.00, 540.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, 
+
+--> Objeto: Potenciadores | Activo: True
+--  PosMundial: (960.00, 1080.00, 0.00) | PosLocal: (0.00, 540.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: RectTransform, 
+
+----> Objeto: Armeria | Activo: True
+----  PosMundial: (-19.41, 510.18, 0.00) | PosLocal: (-979.41, -569.82, 0.00) | Escala: (1.00, 1.00, 1.00)
+----  Componentes: Transform, 
+
+------> Objeto: Panel Armeria | Activo: True
+------  PosMundial: (968.59, 542.18, 0.00) | PosLocal: (988.00, 32.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, ControlArmeria, 
+
+--------> Objeto: Image | Activo: True
+--------  PosMundial: (978.59, 477.18, 0.00) | PosLocal: (10.00, -65.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+--------> Objeto: Bazooka | Activo: True
+--------  PosMundial: (935.59, 502.18, 0.00) | PosLocal: (-33.00, -40.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Usar | Activo: True
+----------  PosMundial: (1000.59, 369.18, 0.00) | PosLocal: (65.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (1000.59, 369.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Agregar | Activo: True
+----------  PosMundial: (900.59, 369.18, 0.00) | PosLocal: (-35.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (900.59, 369.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Elemento | Activo: True
+----------  PosMundial: (1001.99, 417.68, 0.00) | PosLocal: (66.40, -84.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Text (TMP) | Activo: True
+----------  PosMundial: (941.99, 414.98, 0.00) | PosLocal: (6.40, -87.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: AK 47 | Activo: True
+--------  PosMundial: (613.59, 503.18, 0.00) | PosLocal: (-355.00, -39.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Usar | Activo: True
+----------  PosMundial: (678.59, 370.18, 0.00) | PosLocal: (65.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (678.59, 370.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Agregar | Activo: True
+----------  PosMundial: (578.59, 370.18, 0.00) | PosLocal: (-35.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (578.59, 370.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Elemento | Activo: True
+----------  PosMundial: (679.99, 418.68, 0.00) | PosLocal: (66.40, -84.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Text (TMP) | Activo: True
+----------  PosMundial: (619.99, 415.98, 0.00) | PosLocal: (6.40, -87.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: Revolver | Activo: True
+--------  PosMundial: (944.59, 770.18, 0.00) | PosLocal: (-24.00, 228.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Usar | Activo: True
+----------  PosMundial: (1009.59, 637.18, 0.00) | PosLocal: (65.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (1009.59, 637.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Agregar | Activo: True
+----------  PosMundial: (909.59, 637.18, 0.00) | PosLocal: (-35.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (909.59, 637.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Elemento | Activo: True
+----------  PosMundial: (1010.99, 685.68, 0.00) | PosLocal: (66.40, -84.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Text (TMP) | Activo: True
+----------  PosMundial: (950.99, 682.98, 0.00) | PosLocal: (6.40, -87.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: Glock - P80 | Activo: True
+--------  PosMundial: (611.59, 769.18, 0.00) | PosLocal: (-357.00, 227.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Usar | Activo: True
+----------  PosMundial: (676.59, 636.18, 0.00) | PosLocal: (65.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (676.59, 636.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Agregar | Activo: True
+----------  PosMundial: (576.59, 636.18, 0.00) | PosLocal: (-35.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (576.59, 636.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Elemento | Activo: True
+----------  PosMundial: (677.99, 684.68, 0.00) | PosLocal: (66.40, -84.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Text (TMP) | Activo: True
+----------  PosMundial: (617.99, 681.98, 0.00) | PosLocal: (6.40, -87.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: Sub - machinee | Activo: True
+--------  PosMundial: (1270.59, 770.18, 0.00) | PosLocal: (302.00, 228.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Usar | Activo: True
+----------  PosMundial: (1335.59, 637.18, 0.00) | PosLocal: (65.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (1335.59, 637.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Agregar | Activo: True
+----------  PosMundial: (1235.59, 637.18, 0.00) | PosLocal: (-35.00, -133.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------------> Objeto: Text (TMP) | Activo: True
+------------  PosMundial: (1235.59, 637.18, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----------> Objeto: Elemento | Activo: True
+----------  PosMundial: (1336.99, 685.68, 0.00) | PosLocal: (66.40, -84.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+----------> Objeto: Text (TMP) | Activo: True
+----------  PosMundial: (1276.99, 682.98, 0.00) | PosLocal: (6.40, -87.20, 0.00) | Escala: (1.00, 1.00, 1.00)
+----------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+------> Objeto: Button | Activo: True
+------  PosMundial: (1511.59, 829.18, 0.00) | PosLocal: (1531.00, 319.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+--------> Objeto: Text (TMP) | Activo: True
+--------  PosMundial: (1482.09, 829.18, 0.00) | PosLocal: (-29.50, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----> Objeto: Dashboard_0 | Activo: True
+----  PosMundial: (309.00, 1032.00, 0.00) | PosLocal: (-651.00, -48.00, 0.00) | Escala: (61.11, 56.38, 1.00)
+----  Componentes: RectTransform, CanvasRenderer, Image, ControlDashboard, 
+
+------> Objeto: Txt_Cristales | Activo: True
+------  PosMundial: (148.90, 976.18, 0.00) | PosLocal: (-2.62, -0.99, 0.00) | Escala: (0.02, 0.02, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: Cristal | Activo: True
+--------  PosMundial: (70.20, 1037.88, 0.00) | PosLocal: (-78.70, 61.70, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+------> Objeto: Txt_Artefactos | Activo: True
+------  PosMundial: (155.01, 976.18, 0.00) | PosLocal: (-2.52, -0.99, 0.00) | Escala: (0.02, 0.02, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: Artefacto | Activo: True
+--------  PosMundial: (154.61, 1037.89, 0.00) | PosLocal: (-0.40, 61.71, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+------> Objeto: Txt_MOscurar | Activo: True
+------  PosMundial: (317.57, 976.18, 0.00) | PosLocal: (0.14, -0.99, 0.00) | Escala: (0.02, 0.02, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: MOscuro | Activo: True
+--------  PosMundial: (243.27, 1037.89, 0.00) | PosLocal: (-74.30, 61.71, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+------> Objeto: Txt_Orbes | Activo: True
+------  PosMundial: (407.01, 976.18, 0.00) | PosLocal: (1.60, -0.99, 0.00) | Escala: (0.02, 0.02, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: orbes | Activo: True
+--------  PosMundial: (331.01, 1037.89, 0.00) | PosLocal: (-76.00, 61.71, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+------> Objeto: Txt_EsquirlaSTR | Activo: True
+------  PosMundial: (497.01, 976.18, 0.00) | PosLocal: (3.08, -0.99, 0.00) | Escala: (0.02, 0.02, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: Puntos | Activo: True
+--------  PosMundial: (414.01, 1037.89, 0.00) | PosLocal: (-83.00, 61.71, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+------> Objeto: Txt_Barra | Activo: True
+------  PosMundial: (601.10, 973.93, 0.00) | PosLocal: (4.78, -1.03, 0.00) | Escala: (0.02, 0.02, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--------> Objeto: Img_BarraProgreso | Activo: True
+--------  PosMundial: (529.00, 1034.83, 0.00) | PosLocal: (-72.10, 60.90, 0.00) | Escala: (1.00, 1.00, 1.00)
+--------  Componentes: RectTransform, CanvasRenderer, Image, 
+
+------> Objeto: Oleada | Activo: True
+------  PosMundial: (887.08, 1036.65, 0.00) | PosLocal: (9.46, 0.08, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+------> Objeto: Text (TMP) (1) | Activo: True
+------  PosMundial: (979.96, 1036.65, 0.00) | PosLocal: (10.98, 0.08, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+--> Objeto: Button | Activo: True
+--  PosMundial: (695.92, 1028.00, 0.00) | PosLocal: (-264.08, 488.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: RectTransform, CanvasRenderer, Image, Button, MenuInteractivo, 
+
+> Objeto: EventSystem | Activo: True
+  PosMundial: (685.00, 1065.00, 0.00) | PosLocal: (685.00, 1065.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: Transform, EventSystem, InputSystemUIInputModule, 
+
+> Objeto: Pantalla_Victoria | Activo: False
+  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (0.00, 0.00, 0.00)
+  Componentes: RectTransform, Canvas, CanvasScaler, GraphicRaycaster, SpriteRenderer, 
+
+--> Objeto: RawImage | Activo: False
+--  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (9.00, -50.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+--  Componentes: RectTransform, CanvasRenderer, RawImage, SpriteRenderer, 
+
+----> Objeto: Menu principal | Activo: False
+----  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (-184.00, -162.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------> Objeto: Text (TMP) | Activo: False
+------  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----> Objeto: Repetir | Activo: False
+----  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (14.64, -162.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------> Objeto: Text (TMP) | Activo: False
+------  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+----> Objeto: continuar | Activo: False
+----  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (197.00, -162.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+----  Componentes: RectTransform, CanvasRenderer, Image, Button, 
+
+------> Objeto: Text (TMP) | Activo: False
+------  PosMundial: (0.00, 0.00, 0.00) | PosLocal: (0.00, 0.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+------  Componentes: RectTransform, CanvasRenderer, TextMeshProUGUI, 
+
+> Objeto: TESTER | Activo: True
+  PosMundial: (1049.50, 356.50, 0.00) | PosLocal: (1049.50, 356.50, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: Transform, SceneDiagnostico, 
+
+> Objeto: Spawner_Oleadas | Activo: True
+  PosMundial: (1937.00, 431.00, 0.00) | PosLocal: (1937.00, 431.00, 0.00) | Escala: (1.00, 1.00, 1.00)
+  Componentes: Transform, Spawner, 
+
+> Objeto: Zombie_base(Clone) | Activo: True
+  PosMundial: (1958.79, 207.90, 0.00) | PosLocal: (1958.79, 207.90, 0.00) | Escala: (230.00, 230.00, 1.00)
+  Componentes: Transform, SpriteRenderer, Animator, AudioSource, BoxCollider2D, Zombiee, 
+

@@ -20,6 +20,8 @@ public class ControladorSlideshow : MonoBehaviour
         {
             fondoPantalla.sprite = imagenes[0];
         }
+
+        GameLogger.LogToFile("ControladorSlideshow", $"Slideshow inicializado. Imágenes configuradas: {imagenes.Length}");
     }
 
     void Update()
@@ -50,5 +52,6 @@ public class ControladorSlideshow : MonoBehaviour
 
         // Asignamos la nueva imagen al componente de la interfaz
         fondoPantalla.sprite = imagenes[indiceActual];
+        GameLogger.LogToFile("ControladorSlideshow", $"Slideshow avanzó a la imagen índice {indiceActual}.");
     }
 }

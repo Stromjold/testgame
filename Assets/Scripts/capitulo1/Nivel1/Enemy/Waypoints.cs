@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
-    public static Transform[] points;
+    // Ahora guardaremos una lista de las RUTAS (Pasaje1, Pasaje2, etc.)
+    public static Transform[] rutas;
 
     void Awake()
     {
-        // Cuenta cuántos puntos hijos tiene la ruta
-        points = new Transform[transform.childCount];
+        // Contamos cuántos Pasajes (hijos) tiene RutaEnemigos
+        rutas = new Transform[transform.childCount];
         
-        // Guarda cada punto en el arreglo
-        for (int i = 0; i < points.Length; i++)
+        for (int i = 0; i < rutas.Length; i++)
         {
-            points[i] = transform.GetChild(i);
+            rutas[i] = transform.GetChild(i);
         }
+
+        GameLogger.LogToFile("Waypoints", $"Waypoints inicializado. Rutas disponibles: {rutas.Length}");
     }
 }

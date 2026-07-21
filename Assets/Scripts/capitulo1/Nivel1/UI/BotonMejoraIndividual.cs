@@ -21,6 +21,8 @@ public class BotonMejoraIndividual : MonoBehaviour
         costoActual = costoInicial;
         ActualizarBotonUI();
 
+        GameLogger.LogToFile("BotonMejoraIndividual", $"Botón de mejora individual inicializado. Tipo: {tipoDeMejora} | Costo inicial: {costoInicial}");
+
         if (miBoton != null)
         {
             miBoton.onClick.AddListener(IntentarComprar);
@@ -42,21 +44,25 @@ public class BotonMejoraIndividual : MonoBehaviour
         {
             // Restamos los cristales usando el sistema del GameManager
             GameManager.instance.cristales -= costoActual;
+            GameLogger.LogToFile("BotonMejoraIndividual", $"Compra aceptada. Tipo: {tipoDeMejora} | Costo pagado: {costoActual} | Cristales restantes: {GameManager.instance.cristales}");
 
-            // Aplicamos la mejora a cada soldado activo en el mapa
-            foreach (Soldier soldado in GameManager.instance.soldadosActivos)
+            // NUEVO: Aplicamos la mejora comunicándonos con el Controlador Maestro
+            if (ControlSoldados.instance != null)
             {
-                if (soldado != null)
+                foreach (ControlSoldados.Soldado soldado in ControlSoldados.instance.escuadron)
                 {
-                    if (tipoDeMejora == TipoMejora.Vida)
+                    if (soldado != null)
                     {
-                        // Ejemplo: soldado.AumentarVidaMaxima(20);
-                        Debug.Log("Mejorando vida de un soldado activo.");
-                    }
-                    else if (tipoDeMejora == TipoMejora.Danio)
-                    {
-                        // Ejemplo: soldado.AumentarDanio(5);
-                        Debug.Log("Mejorando daño de un soldado activo.");
+                        if (tipoDeMejora == TipoMejora.Vida)
+                        {
+                            // Aquí irá tu lógica futura para la vida
+                            Debug.Log("Mejorando vida del escuadrón.");
+                        }
+                        else if (tipoDeMejora == TipoMejora.Danio)
+                        {
+                            // Aquí irá tu lógica futura para el daño
+                            Debug.Log("Mejorando daño del escuadrón.");
+                        }
                     }
                 }
             }
@@ -67,6 +73,10 @@ public class BotonMejoraIndividual : MonoBehaviour
             // Forzamos al GameManager a refrescar la UI global de recursos
             GameManager.instance.RecogerRecurso("Cristal", 0);
             ActualizarBotonUI();
+        }
+        else
+        {
+            GameLogger.LogToFile("BotonMejoraIndividual", $"[FALLO DE COMPRA] Tipo: {tipoDeMejora} | Costo: {costoActual} | Cristales disponibles: {(GameManager.instance != null ? GameManager.instance.cristales : 0)}");
         }
     }
 

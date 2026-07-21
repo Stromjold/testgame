@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // NUEVO: Necesario para controlar el Text (TMP)
+using TMPro; 
 
 public class ControlArmeria : MonoBehaviour
 {
@@ -17,12 +17,9 @@ public class ControlArmeria : MonoBehaviour
         public Image imagenUIEnTienda;
         public GameObject prefabArma;
 
-        [Header("Recursos y Precio (NUEVO)")]
-        [Tooltip("El icono puro del recurso (cristal, orbe, etc.)")]
+        [Header("Recursos y Precio")]
         public Sprite iconoElemento;
-        [Tooltip("Arrastra aquí el objeto hijo 'Elemento' (Image) de tu arma")]
         public Image imagenUIElemento;
-        [Tooltip("Arrastra aquí el objeto hijo 'Text (TMP)' de tu arma")]
         public TextMeshProUGUI textoCostoUI;
 
         [Header("Botones Físicos")]
@@ -39,37 +36,21 @@ public class ControlArmeria : MonoBehaviour
     [Header("--- CATÁLOGO DE ARMAS ---")]
     public SlotDeArma[] catalogoDeArmas;
 
-    [Header("Los 5 Soldados")]
-    public Soldier[] los5Soldados;
+    [Header("Los 5 Soldados (Solo Interfaz)")]
     public Image[] iconosSoldadosUI;
 
     private int indiceArmaPendiente = -1;
     private Sprite imagenArmaPendiente;
 
-    // --- LA MAGIA EN TIEMPO REAL ACTUALIZADA ---
     void OnValidate()
     {
         if (catalogoDeArmas != null)
         {
             foreach (SlotDeArma arma in catalogoDeArmas)
             {
-                // 1. Actualiza el dibujo del arma
-                if (arma.imagenUIEnTienda != null && arma.imagenDelArma != null)
-                {
-                    arma.imagenUIEnTienda.sprite = arma.imagenDelArma;
-                }
-
-                // 2. Actualiza el icono del recurso (cristal, orbe, etc.)
-                if (arma.imagenUIElemento != null && arma.iconoElemento != null)
-                {
-                    arma.imagenUIElemento.sprite = arma.iconoElemento;
-                }
-
-                // 3. Actualiza el texto de los puntos automáticamente
-                if (arma.textoCostoUI != null)
-                {
-                    arma.textoCostoUI.text = arma.costoElemento.ToString() + " pts";
-                }
+                if (arma.imagenUIEnTienda != null && arma.imagenDelArma != null) arma.imagenUIEnTienda.sprite = arma.imagenDelArma;
+                if (arma.imagenUIElemento != null && arma.iconoElemento != null) arma.imagenUIElemento.sprite = arma.iconoElemento;
+                if (arma.textoCostoUI != null) arma.textoCostoUI.text = arma.costoElemento.ToString() + " pts";
             }
         }
     }
@@ -77,6 +58,8 @@ public class ControlArmeria : MonoBehaviour
     void Start()
     {
         if (panelArmeria != null) panelArmeria.SetActive(false);
+
+        GameLogger.LogToFile("ControlArmeria", $"Armería inicializada. Total de armas en catálogo: {catalogoDeArmas.Length}");
 
         for (int i = 0; i < catalogoDeArmas.Length; i++)
         {
@@ -100,13 +83,10 @@ public class ControlArmeria : MonoBehaviour
     void Update()
     {
         if (GameManager.instance == null) return;
-
         foreach (SlotDeArma arma in catalogoDeArmas)
         {
             if (!arma.comprada && arma.botonAgregar != null)
-            {
                 arma.botonAgregar.interactable = (GameManager.instance.cristales >= arma.costoElemento);
-            }
         }
     }
 
@@ -117,20 +97,26 @@ public class ControlArmeria : MonoBehaviour
             bool nuevoEstado = !panelArmeria.activeSelf;
             panelArmeria.SetActive(nuevoEstado);
             if (pausarJuegoAlAbrir) Time.timeScale = nuevoEstado ? 0f : 1f;
+
+            GameLogger.LogToFile("ControlArmeria", $"Armería alternada. Estado visible: {nuevoEstado} | Juego pausado: {pausarJuegoAlAbrir && nuevoEstado}");
         }
     }
 
     private void ComprarArma(int indexArray)
     {
         SlotDeArma arma = catalogoDeArmas[indexArray];
-
         if (GameManager.instance != null && GameManager.instance.cristales >= arma.costoElemento)
         {
             GameManager.instance.cristales -= arma.costoElemento;
             arma.comprada = true;
-
             if (arma.botonAgregar != null) arma.botonAgregar.gameObject.SetActive(false);
             if (arma.botonUsar != null) arma.botonUsar.gameObject.SetActive(true);
+
+            GameLogger.LogToFile("ControlArmeria", $"[COMPRA EXITOSA] Arma comprada: '{arma.nombreParaIdentificar}' por {arma.costoElemento} cristales.");
+        }
+        else
+        {
+            GameLogger.LogToFile("ControlArmeria", $"[FALLO DE COMPRA] Intento fallido de comprar '{arma.nombreParaIdentificar}'. Cristales insuficientes.");
         }
     }
 
@@ -139,17 +125,22 @@ public class ControlArmeria : MonoBehaviour
         SlotDeArma arma = catalogoDeArmas[indexArray];
         indiceArmaPendiente = arma.indiceDelArmaEnSoldado;
         imagenArmaPendiente = arma.imagenDelArma;
-        Debug.Log("Arma en espera: " + arma.nombreParaIdentificar + ". Haz clic en un soldado.");
+
+        GameLogger.LogToFile("ControlArmeria", $"Arma preparada para equipar: '{arma.nombreParaIdentificar}' (Índice de arma: {indiceArmaPendiente})");
     }
 
     public void EquiparASoldadoEspecifico(int numeroSoldado)
     {
-        if (indiceArmaPendiente == -1) return;
-
-        if (numeroSoldado >= 0 && numeroSoldado < los5Soldados.Length)
+        if (indiceArmaPendiente == -1)
         {
-            Soldier soldadoSeleccionado = los5Soldados[numeroSoldado];
-            if (soldadoSeleccionado != null) soldadoSeleccionado.CambiarArma(indiceArmaPendiente);
+            GameLogger.LogToFile("ControlArmeria", $"[ADVERTENCIA] Se intentó equipar a un soldado (Pos {numeroSoldado}), pero no hay ningún arma pendiente.");
+            return;
+        }
+
+        // Conexión con el nuevo Controlador Maestro
+        if (ControlSoldados.instance != null)
+        {
+            ControlSoldados.instance.CambiarArmaDeSoldado(numeroSoldado, indiceArmaPendiente);
 
             if (numeroSoldado < iconosSoldadosUI.Length && iconosSoldadosUI[numeroSoldado] != null)
             {
@@ -157,8 +148,14 @@ public class ControlArmeria : MonoBehaviour
                 iconosSoldadosUI[numeroSoldado].color = new Color(1, 1, 1, 1);
             }
 
+            GameLogger.LogToFile("ControlArmeria", $"[EQUIPADO] Arma asignada exitosamente al Soldado en la posición [{numeroSoldado}].");
+
             indiceArmaPendiente = -1; 
             imagenArmaPendiente = null;
+        }
+        else
+        {
+            GameLogger.LogToFile("ControlArmeria", $"[ERROR] ControlSoldados.instance es NULL. No se pudo asignar el arma al soldado [{numeroSoldado}].");
         }
     }
 }

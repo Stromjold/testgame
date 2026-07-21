@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2047624747166460282}
   - component: {fileID: 4113612058800865554}
   - component: {fileID: 3191396394971778774}
-  - component: {fileID: 1048446627735191029}
-  - component: {fileID: -5313172358040653217}
   - component: {fileID: 79321425511368757}
+  - component: {fileID: 1538293730851417103}
+  - component: {fileID: 4813613536031229685}
   m_Layer: 0
   m_Name: Zombie_base
   m_TagString: Enemy
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6370103078168901528}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1747.9802, y: 369.9008, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1958.7898, y: 207.90079, z: 0}
   m_LocalScale: {x: 230, y: 230, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3215931543429482107, guid: 3fc159670fd473842b7d66c50125f5f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,7 +106,7 @@ Animator:
   m_GameObject: {fileID: 6370103078168901528}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4eabd2079ecf77f40b2509cd15555869, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7370d73ec10b7734fa929714de1c1705, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -118,39 +118,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1048446627735191029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6370103078168901528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09318b68879af704eae98c966ab80c19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RecursoDrop
-  tipoDeRecurso: Cristal
-  cantidad: 1
---- !u!114 &-5313172358040653217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6370103078168901528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ebbd0e2f735b624ca9b9813146924b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  speed: 30
-  health: 5
-  sonidoImpacto: {fileID: 0}
-  sonidoMuerte: {fileID: 8300000, guid: 5f06803dec4b11848a06381316accbe8, type: 3}
-  sonidoAmbiente: {fileID: 8300000, guid: df8ea43738b8930418f66871ad69518c, type: 3}
-  "tiempoMinGru\xF1ido": 3
-  "tiempoMaxGru\xF1ido": 8
 --- !u!82 &79321425511368757
 AudioSource:
   m_ObjectHideFlags: 0
@@ -248,3 +215,70 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1538293730851417103
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6370103078168901528}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.15, y: 0.28}
+    newSize: {x: 0.15, y: 0.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.15, y: 0.28}
+  m_EdgeRadius: 0
+--- !u!114 &4813613536031229685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6370103078168901528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288606bbe127b2a43ac4e76fe9b76a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  speed: 35
+  health: 10
+  sonidoImpacto: {fileID: 0}
+  sonidoMuerte: {fileID: 8300000, guid: 5f06803dec4b11848a06381316accbe8, type: 3}
+  sonidoAmbiente: {fileID: 8300000, guid: df8ea43738b8930418f66871ad69518c, type: 3}
+  volumenAmbiente: 0.35
+  "tiempoMinGru\xF1ido": 3
+  "tiempoMaxGru\xF1ido": 8
+  prefabRecursoDrop: {fileID: 1282000713864741826, guid: 3396578abb321d54ab8153532c339b87, type: 3}

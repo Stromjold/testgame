@@ -1,88 +1,116 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
-    // Esta estructura crea las casillas en el Inspector de Unity
     [System.Serializable]
-    public struct DatosOleada
+    public class ComponenteDrop
     {
-        public string nombreDeOleada;
-        public GameObject enemigoPrefab; // Aquí arrastrarás al monstruo que quieras
-        public int cantidadDeEnemigos;
-        public int vidaEnemigos;
-        public float tiempoEntreEnemigos;
+        public string nombreComponente = "Cristal";
+        public GameObject prefabObjeto; // El prefab físico que caerá al suelo
     }
 
-    [Header("Configuración de Oleadas")]
-    public DatosOleada[] listaDeOleadas; 
-    public float tiempoEntreOleadas = 5f; //   
+    [System.Serializable]
+    public class TipoEnemigo
+    {
+        public string nombreMonstruo = "Zombie Base";
+        public GameObject prefabEnemigo;
+        public int vidaInicial = 10;
 
-    private int oleadaActualIndex = 0;
-    private Coroutine spawnerCoroutine;
+        [Header("Componentes que puede botar (Check)")]
+        // Lista de booleanos alineada con la sección general de componentes
+        public List<bool> componentesPermitidos = new List<bool>();
+    }
+
+    [Header("--- 1. SECCIÓN DE COMPONENTES ---")]
+    public List<ComponenteDrop> catalogoComponentes = new List<ComponenteDrop>();
+
+    [Header("--- 2. CATÁLOGO DE MONSTRUOS ---")]
+    public List<TipoEnemigo> catalogoMonstruos = new List<TipoEnemigo>();
+
+    [Header("Configuración de Oleadas")]
+    public float tiempoEntreOleadas = 5f;
+    public int enemigosPorOleada = 40;
+    
+    [Header("Ritmo de Aparición")]
+    public float tiempoEntreEnemigos = 3f; 
+
+    private int oleadaActual = 1;
+    private int totalOleadas = 5;
 
     void Start()
     {
-        if (listaDeOleadas == null || listaDeOleadas.Length == 0)
+        GameLogger.LogToFile("Spawner", $"Spawner inicializado. Componentes: {catalogoComponentes.Count} | Monstruos: {catalogoMonstruos.Count}");
+        
+        if (catalogoMonstruos.Count > 0)
         {
-            Debug.LogError("No has configurado ninguna oleada en el Spawner.");
-            return;
+            StartCoroutine(GestionarOleadas());
         }
-
-        spawnerCoroutine = StartCoroutine(GestionarOleadas());
+        else
+        {
+            Debug.LogError("[❌ ERROR SPAWNER] El catálogo de monstruos está vacío en el Inspector.");
+        }
     }
 
     IEnumerator GestionarOleadas()
     {
-        while (oleadaActualIndex < listaDeOleadas.Length)
+        GameLogger.LogToFile("Spawner", $"Iniciando oleada {oleadaActual}/{totalOleadas}. Total de enemigos a generar: {enemigosPorOleada}");
+
+        for (int i = 0; i < enemigosPorOleada; i++)
         {
-            DatosOleada datos = listaDeOleadas[oleadaActualIndex];
-
-            // 1. Actualizamos la UI del GameManager
-            string infoOleada = $"Oleada: {oleadaActualIndex + 1} / {listaDeOleadas.Length}\nEnemigos: {datos.cantidadDeEnemigos}";
-            if(GameManager.instance != null) GameManager.instance.ActualizarTextoOleada(infoOleada);
-
-            // 2. Generamos los monstruos elegidos para esta oleada
-            for (int i = 0; i < datos.cantidadDeEnemigos; i++)
-            {
-                if (datos.enemigoPrefab == null)
-                {
-                    Debug.LogError("Falta asignar el prefab del enemigo en la oleada " + (oleadaActualIndex + 1));
-                    yield break;
-                }
-
-                // Genera el monstruo en el punto de inicio
-                GameObject nuevoEnemigo = Instantiate(datos.enemigoPrefab, transform.position, Quaternion.identity);
-                if(GameManager.instance != null) GameManager.instance.RegistrarEnemigoGenerado();
-
-                // Le asignamos la vida configurada en el Inspector
-                Enemy scriptEnemigo = nuevoEnemigo.GetComponent<Enemy>();
-                if (scriptEnemigo != null)
-                {
-                    scriptEnemigo.EstablecerVida(datos.vidaEnemigos);
-                }
-
-                yield return new WaitForSeconds(datos.tiempoEntreEnemigos);
-            }
-
-            // --- LA OLEADA HA TERMINADO ---
-            oleadaActualIndex++;
-
-            if (oleadaActualIndex < listaDeOleadas.Length)
-            {
-                yield return new WaitForSeconds(tiempoEntreOleadas);
-            }
+            SpawnetearMonstruoAleatorio();
+            
+            yield return new WaitForSeconds(tiempoEntreEnemigos); 
         }
-
-        // --- TODAS LAS OLEADAS COMPLETADAS ---
-        if(GameManager.instance != null) GameManager.instance.SpawningCompleto();
     }
 
-    public void DetenerSpawner()
+    void SpawnetearMonstruoAleatorio()
     {
-        if (spawnerCoroutine != null)
+        if (catalogoMonstruos.Count == 0) return;
+
+        int indexAleatorio = Random.Range(0, catalogoMonstruos.Count);
+        TipoEnemigo seleccionado = catalogoMonstruos[indexAleatorio];
+
+        if (seleccionado.prefabEnemigo != null)
         {
-            StopCoroutine(spawnerCoroutine);
+            GameObject enemigoGO = Instantiate(seleccionado.prefabEnemigo);
+            
+            Zombiee zombieScript = enemigoGO.GetComponent<Zombiee>();
+            if (zombieScript != null)
+            {
+                zombieScript.EstablecerVida(seleccionado.vidaInicial);
+
+                // Seleccionar un componente al azar entre los que tengan el Check (true) activado para este monstruo
+                GameObject dropElegido = ObtenerDropPermitidoAleatorio(seleccionado);
+                if (dropElegido != null)
+                {
+                    zombieScript.prefabRecursoDrop = dropElegido;
+                }
+            }
+
+            GameLogger.LogToFile("Spawner", $"Monstruo '{seleccionado.nombreMonstruo}' instanciado con éxito.");
         }
+    }
+
+    GameObject ObtenerDropPermitidoAleatorio(TipoEnemigo monstruo)
+    {
+        List<GameObject> dropsDisponibles = new List<GameObject>();
+
+        for (int i = 0; i < monstruo.componentesPermitidos.Count && i < catalogoComponentes.Count; i++)
+        {
+            if (monstruo.componentesPermitidos[i] && catalogoComponentes[i].prefabObjeto != null)
+            {
+                dropsDisponibles.Add(catalogoComponentes[i].prefabObjeto);
+            }
+        }
+
+        if (dropsDisponibles.Count > 0)
+        {
+            int index = Random.Range(0, dropsDisponibles.Count);
+            return dropsDisponibles[index];
+        }
+
+        return null; 
     }
 }

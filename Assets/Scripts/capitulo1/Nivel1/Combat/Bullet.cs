@@ -12,6 +12,10 @@ public class Bullet : MonoBehaviour
     public void Seek(Transform _target)
     {
         target = _target;
+        if (target != null)
+        {
+            GameLogger.LogToFile("Bullet", $"Bala dirigida a {target.name}.");
+        }
     }
 
     void Update()
@@ -36,7 +40,7 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        Enemy enemigo = target.GetComponent<Enemy>();
+        Zombiee enemigo = target.GetComponent<Zombiee>();
         
         if (enemigo != null)
         {
@@ -49,6 +53,8 @@ public class Bullet : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(sonidoImpacto, transform.position);
         }
+
+        GameLogger.LogToFile("Bullet", $"Bala impactó en {target.name}.");
 
         Destroy(gameObject);
     }

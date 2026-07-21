@@ -808,6 +808,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 458171321411698754
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
     - rid: 3711379689614082062
       type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data:
@@ -815,7 +819,7 @@ MonoBehaviour:
         m_SelectedSource:
           rid: -2
         m_Provider2DCache:
-          rid: -2
+          rid: 458171321411698754
 --- !u!4 &619394802
 Transform:
   m_ObjectHideFlags: 0
@@ -1233,7 +1237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6428043885129688519, guid: 44df2301c605f2441a1d788bdbe3dced, type: 3}
+  m_Sprite: {fileID: 2335124364682654953, guid: 094761eaaa3bc8149a20911112a24a07, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
